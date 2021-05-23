@@ -1,0 +1,7 @@
+Exercicio:
+Ler a idade de uma pessoa é informar:
+->se idade até 10 anos: criança
+->se idade acima de 10 até 14: pré-adolescente
+->acima de 14 até 18: adolescente
+->acima d 18 até 50: adulto
+->acima de 50: terceira idade
