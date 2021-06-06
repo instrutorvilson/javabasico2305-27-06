@@ -28,6 +28,8 @@ public class JogoVelha {
         
         boolean jogar = true;
         while(jogar){
+            //primeiro jogador
+            System.out.println("== Jogada do jogador");
             System.out.println("Informe linha ");
             int linha = new Scanner(System.in).nextInt();
             
@@ -85,6 +87,24 @@ public class JogoVelha {
             if( (tabuleiro[0][2] == "x")&&(tabuleiro[1][2]=="x")&&(tabuleiro[2][2]=="x")){
                 System.out.println("X ganhou");
                 jogar = false;
+            }
+            
+            //segundo jogador (computador)
+            System.out.println("== Jogada do computador");
+            linha = (int)(Math.random()*3);
+            coluna = (int)(Math.random()*3);
+            if(tabuleiro[linha][coluna].equals("")){
+              tabuleiro[linha][coluna] = "O";
+            } 
+            else
+                System.out.println("Posição ja preenchida"); 
+        }
+        
+        //listar tabuleiro
+        for(int linha=0; linha < tabuleiro.length;linha++){
+            System.out.println("");
+            for(int coluna=0; coluna < tabuleiro.length; coluna++){
+                System.out.print(tabuleiro[linha][coluna] + " ");
             }
         }
         
