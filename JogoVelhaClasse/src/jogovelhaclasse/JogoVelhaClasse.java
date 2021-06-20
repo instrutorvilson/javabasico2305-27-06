@@ -22,16 +22,16 @@ public class JogoVelhaClasse {
        Jogador jogador2 = new Jogador("Pedro","O");
        
        boolean jogar = true;
+       boolean ganhou = false;
         while(jogar){
-            System.out.println(jogador1.nome + " sua vez de jogar");
-            jogo.efetuarJogada(jogador1);
-            jogar = jogo.ganhou(jogador1);
-             
-            if(!jogar){
+           System.out.println(jogador1.nome + " sua vez de jogar");
+           ganhou = jogo.efetuarJogada(jogador1); 
+            
+           if (!ganhou){
               System.out.println(jogador2.nome + " sua vez de jogar");           
-              jogo.efetuarJogada(jogador2);
-              jogar = jogo.ganhou(jogador2); 
-            }           
+              ganhou = jogo.efetuarJogada(jogador2);   
+           } 
+           jogar = !ganhou;
         }       
        
     }
