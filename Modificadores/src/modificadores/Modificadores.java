@@ -6,6 +6,8 @@
 package modificadores;
 
 import classes.Pessoa;
+import modificadorfinal.Animal;
+import modificadorfinal.Mamifero;
 
 
 public class Modificadores {
@@ -14,6 +16,15 @@ public class Modificadores {
         Pessoa pessoa = new Pessoa();
         pessoa.nome = "Vilson";
         pessoa.setCpf("12345678910");
+        
+        Animal animal = new Animal();
+        animal.raca = "Dinossauro";
+        animal.cor = "verde";
+        animal.barulho();
+        animal.comer();
+        
+          Mamifero vaca = new Mamifero();
+          vaca.barulho();
     }
     
 }
