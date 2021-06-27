@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,18 @@ import java.util.List;
 
 /*Cliente precisa implementar todos os métodos definido na interface*/
 public class Cliente implements ICrud{
+    
+    String nome;
+    String fone;
+
+    public Cliente(String nome, String fone) {
+        this.nome = nome;
+        this.fone = fone;
+    }
+
+    public Cliente() {
+    }
+    
 
     @Override
     public boolean gravar() {
@@ -32,12 +45,22 @@ public class Cliente implements ICrud{
 
     @Override
     public List<Object> consultarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       List<Object> lista = new ArrayList<>();
+       lista.add(new Cliente("jose", "123"));
+       lista.add(new Cliente("maria", "456"));
+       lista.add(new Cliente("pedro", "789"));
+       lista.add(new Cliente("carla", "154"));
+       return lista;
     }
 
     @Override
     public Object consultarPeloId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nome=" + nome + ", fone=" + fone + '}';
     }
     
 }
