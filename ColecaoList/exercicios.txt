@@ -1,0 +1,5 @@
+Solicitar ao usuário que informe nomes, enquanto desejar.
+
+-Em seguida solicite ao usuario qual nome deseja substituir?
+
+-Faça a substituição do nome.
