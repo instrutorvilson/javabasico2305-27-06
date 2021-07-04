@@ -8,6 +8,7 @@ package aula1;
 import aula1.view.Boletim;
 import aula1.view.BoletimMVC;
 import aula1.view.Cadastro;
+import aula1.view.FormImagem;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Aula1 {
      */
     public static void main(String[] args) {
        // new Cadastro().setVisible(true);
-       new BoletimMVC().setVisible(true);
+       new FormImagem().setVisible(true);
     }
     
 }
