@@ -5,6 +5,7 @@
  */
 package aula1;
 
+import aula1.view.Boletim;
 import aula1.view.Cadastro;
 
 /**
@@ -17,7 +18,8 @@ public class Aula1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       new Cadastro().setVisible(true);
+       // new Cadastro().setVisible(true);
+       new Boletim().setVisible(true);
     }
     
 }
