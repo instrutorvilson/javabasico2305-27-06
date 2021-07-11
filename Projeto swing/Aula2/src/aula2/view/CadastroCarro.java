@@ -10,18 +10,18 @@ import aula2.controller.ControllerCarro;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author vilson.moro
  */
 public class CadastroCarro extends javax.swing.JFrame {
+
     ControllerCarro controllerCarro = new ControllerCarro();
-    
+
     public CadastroCarro() {
         initComponents();
     }
-  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -204,27 +204,44 @@ public class CadastroCarro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Carro carro = new Carro();
-       carro.setPlaca(jTplaca.getText());       
-       carro.setMarca(jCmarca.getSelectedItem().toString());
-       carro.setModelo(jTmodelo.getText());
-       carro.setCor(jTcor.getText());
-       
-       if(controllerCarro.salvar(carro)){
-           JOptionPane.showMessageDialog(null, "Carro cadastrado com sucesso");
-       }       
+        if (validaDados()) {
+            Carro carro = new Carro();
+            carro.setPlaca(jTplaca.getText());
+            carro.setMarca(jCmarca.getSelectedItem().toString());
+            carro.setModelo(jTmodelo.getText());
+            carro.setCor(jTcor.getText());
+
+            if (controllerCarro.salvar(carro)) {
+                JOptionPane.showMessageDialog(null, "Carro cadastrado com sucesso");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private boolean validaDados() {
+        if (jTplaca.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Informe a placa");
+            jTplaca.requestFocus();
+            return false;
+        }
+        
+        if(jCmarca.getSelectedIndex() == 0){
+            JOptionPane.showMessageDialog(null, "Selecione marca");
+            jCmarca.requestFocus();
+            return false;  
+        }
+        
+        return true;
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setNumRows(0);
-        for(Carro carro : controllerCarro.getCarros()){
-           modelo.addRow(new Object[]{
-              carro.getPlaca(),
-              carro.getMarca(),
-              carro.getModelo(),
-              carro.getCor()
-           });
+        for (Carro carro : controllerCarro.getCarros()) {
+            modelo.addRow(new Object[]{
+                carro.getPlaca(),
+                carro.getMarca(),
+                carro.getModelo(),
+                carro.getCor()
+            });
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

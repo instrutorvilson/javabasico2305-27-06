@@ -6,6 +6,7 @@
 package aula2.controller;
 
 
+import aula2.models.DAOCarro;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,14 @@ public class ControllerCarro {
    private List<Carro> lista = new ArrayList<>();
   
    public boolean salvar(Carro carro){
+       if(carro.getPlaca().isEmpty()){
+           System.out.println("Informe placa");
+           return false;
+       }
        lista.add(carro);
+       
+       DAOCarro.salvar(carro);
+       
        return true;
    }
    
