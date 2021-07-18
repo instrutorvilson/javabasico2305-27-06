@@ -1,0 +1,4 @@
+1)Criar um formulário par digitar nome do aluno, três notas e percentual de frequencia;
+Mostrar em um label o nome, média e situação do aluno.
+
+2-Criar um formulário para inserir a placa do carro, o modelo, marca,  quantos litros abasteceu, km por litro. Listar os dados em uma tabela mostrando a autonomia do carro.

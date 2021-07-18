@@ -16,14 +16,15 @@ package aula2.models;
 
 import aula2.controller.Carro;
 import aula2.utils.ConectaDB;
+import aula2.utils.ICRUD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DAOCarro {
-   public static boolean salvar(Carro carro){
+public class DAOCarro implements ICRUD<Carro>{
+   public boolean salvar(Carro carro){
        Connection con = ConectaDB.getConexao();
        String sql = "insert into carro (placa,marca,modelo,cor)";
               sql += "values(?,?,?,?)" ;
@@ -39,4 +40,11 @@ public class DAOCarro {
        }
        return true;
    } 
+
+    @Override
+    public Carro getOne(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

@@ -1,12 +1,65 @@
 04/07
+----------------------------------
 criar aplicação swing;
 Organização em camadas;
 Componentes de entrada de dados;
 Componentes de listagem de dados;
 Eventos;
 
+
 11/07
+-----------------------------------
+componentes containers
+Menus
+combobox
+tabela
+separar aplicação em camadas
+operação de inserir, consultar e alterar em lista.
+
+
+18/07
+-----------------------------------
+Banco de dados: conceitos
+crud
 
 
 
+25/07
+-----------------------------------
+crud
 
+
+
+01/08
+-----------------------------------
+
+crud
+
+
+08/08
+-----------------------------------
+
+Consultas com filtros
+
+
+15/08
+-----------------------------------
+
+jpa
+
+
+22/08
+-----------------------------------
+ Trabalho em sala
+
+
+29/08
+-----------------------------------
+ Trabalho em sala
+
+
+
+05/09
+-----------------------------------
+
+Correção trabalho

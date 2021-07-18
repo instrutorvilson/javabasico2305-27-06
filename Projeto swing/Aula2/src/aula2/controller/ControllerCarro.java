@@ -25,7 +25,7 @@ public class ControllerCarro {
        }
        lista.add(carro);
        
-       DAOCarro.salvar(carro);
+       new DAOCarro().salvar(carro);
        
        return true;
    }
