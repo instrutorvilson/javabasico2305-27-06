@@ -5,6 +5,7 @@
  */
 package aula3.models;
 
+import aula3.controller.Produto;
 import aula3.utils.ConectaDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,5 +26,27 @@ public class DAOProduto {
             Logger.getLogger(DAOProduto.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
+    }
+    
+    public static boolean salvar(Produto produto){
+        //acessar banco de dados
+        try{
+          Connection con = ConectaDB.getConexao();
+          String sql = "insert into produto" +
+                        "(descricao, preco, estoque, idcategoria)" +
+                        "values(?,?,?,?)";
+          PreparedStatement stm = con.prepareStatement(sql);
+          stm.setString(1, produto.getDescricao());
+          stm.setFloat(2, produto.getPreco());
+          stm.setFloat(3, produto.getEstoque());
+          stm.setInt(4, produto.getIdcategoria());
+          stm.execute();
+          
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+        
+        return true;
     }
 }
