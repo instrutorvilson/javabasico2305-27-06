@@ -149,6 +149,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         }
         Produto p = new Produto();
         p.setDescricao(jTdescricao.getText());
+        
         try {
             p.setPreco(Float.parseFloat(jTpreco.getText()));
         } catch (NumberFormatException e) {
@@ -165,7 +166,7 @@ public class CadastroProduto extends javax.swing.JFrame {
             return;
         }
         p.setIdcategoria(jCcategorias.getSelectedIndex() + 1);
-
+     
         if (DAOProduto.salvar(p)) {
             JOptionPane.showMessageDialog(rootPane, "Produto salvo com sucesso");
             limpaCampos();
@@ -180,6 +181,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         jTpreco.setText("");
         jTestoque.setText("");
         jCcategorias.setSelectedIndex(-1);
+        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
