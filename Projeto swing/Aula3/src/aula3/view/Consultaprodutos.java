@@ -111,7 +111,8 @@ public class Consultaprodutos extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         try {
             //chamar objeto DAO
-            ResultSet rs = DAOProduto.getProdutos();
+            ResultSet rs = DAOProduto.getProdutos(jTFiltro.getText());
+            modelo.setNumRows(0);
             while (rs.next()) {
                modelo.addRow(new Object[] {
                    rs.getString("id"),

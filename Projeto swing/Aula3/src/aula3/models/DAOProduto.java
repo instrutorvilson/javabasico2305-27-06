@@ -15,11 +15,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DAOProduto {
-    public static ResultSet getProdutos(){
+    public static ResultSet getProdutos(String filtro){
         ResultSet rs = null;
         try {           
             Connection con = ConectaDB.getConexao();
-            String sql = "select * from produto";
+            String sql = "select * from produto "
+                    + " where descricao like '%"+ filtro +"%'";
             PreparedStatement stm = con.prepareStatement(sql);
             rs = stm.executeQuery();
         } catch (SQLException ex) {
