@@ -99,11 +99,12 @@ public class Menu extends javax.swing.JFrame {
         new Consultaprodutos().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-  
     public static void main(String args[]) {
          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                Menu tela = new Menu();
+                tela.setExtendedState(MAXIMIZED_BOTH);
+                tela.setVisible(true);
             }
         });
     }

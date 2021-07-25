@@ -117,8 +117,8 @@ public class Consultaprodutos extends javax.swing.JFrame {
                modelo.addRow(new Object[] {
                    rs.getString("id"),
                    rs.getString("descricao"),
-                   rs.getString("preco"),
-                   rs.getString("estoque"),
+                   rs.getFloat("preco"),
+                   rs.getFloat("estoque"),
                    rs.getString("idcategoria")
                });
             }
