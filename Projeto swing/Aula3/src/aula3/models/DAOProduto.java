@@ -15,6 +15,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DAOProduto {
+    public static ResultSet getProdutos(){
+        ResultSet rs = null;
+        try {           
+            Connection con = ConectaDB.getConexao();
+            String sql = "select * from produto";
+            PreparedStatement stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return rs;        
+    }
+    
+    
     public static ResultSet getCategorias(){
         ResultSet rs = null;
         try {
@@ -45,8 +59,7 @@ public class DAOProduto {
         }catch(SQLException e){
             System.out.println(e.getMessage());
             return false;
-        }
-        
+        }        
         return true;
     }
 }
